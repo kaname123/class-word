@@ -1,0 +1,35 @@
+package test;
+
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class word {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		String s=in.next();
+//		char[] a=s.toCharArray();
+		TreeSet<String> tr=new TreeSet<String>(new MyComparator());
+
+		for(int i=0;i<s.length();i++){
+			for(int j=i+1;j<=s.length();j++){
+				
+				tr.add(s.substring(i, j));
+				
+			}
+		}
+		// TODO Auto-generruated method stub
+System.out.println(tr);
+	}
+
+}
+class MyComparator implements Comparator<String>{
+public int compare(String a1,String a2){
+	if(a1.length()!=a2.length()){
+	return a1.length()-a2.length();}
+	else
+		return a1.compareTo(a2);
+}
+	
+}
