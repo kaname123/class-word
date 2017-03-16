@@ -28,8 +28,10 @@ class MyComparator implements Comparator<String>{
 public int compare(String a1,String a2){
 	if(a1.length()!=a2.length()){
 	return a1.length()-a2.length();}
-	else
-		return a1.compareTo(a2);
+	else if(!a1.equals(a2)){
+		return a1.compareTo(a2);}
+	else 
+		return 1;
 }
 	
 }
